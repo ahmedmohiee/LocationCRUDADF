@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="update.jsf" id="d1">
+        <af:form id="f1">
+        <af:inputText label="city" id="it1" value="#{viewScope.update.city}"/>
+            <af:inputText label="countryId" id="it2" value="#{viewScope.update.countryId}"/>
+            <af:inputText label="locationId" id="it3" value="#{viewScope.update.locationId}"/>
+            <af:inputText label="postalCode" id="it4" value="#{viewScope.update.postalCode}"/>
+            <af:inputText label="stateProvince" id="it5" value="#{viewScope.update.stateProvince}"/>
+            <af:inputText label="streetAddress" id="it6" value="#{viewScope.update.streetAddress}"/>
+            <af:button text="button 1" id="b1" actionListener="#{viewScope.update.post}"/>
+        </af:form>
+    </af:document>
+</f:view>

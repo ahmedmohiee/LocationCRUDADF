@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="getAll.jsf" id="d1">
+        <!--<af:inputText label="city" id="it1"/>-->
+        <af:form id="f1">
+            <af:inputText label="Label 1" id="it1" value="#{viewScope.locations.id}"/>
+            <af:button text="search" id="b2" actionListener="#{viewScope.locations.getByLocationId}"/>
+                    <af:outputText value="#{viewScope.locations.id}" id="ot6" partialTriggers="b2"/>
+        </af:form>
+        
+
+        <af:form id="f2">
+            <af:button text="button 1" id="b1" actionListener="#{viewScope.locations.getAllLocations}"/>
+            <af:table value="#{viewScope.locations.locationList}" var="row" rowBandingInterval="0" id="t1"
+                      partialTriggers="::b1">
+                <af:column sortable="false" headerText="city" id="c1">
+                    <af:outputText value="#{row.city}" id="ot1"/>
+                </af:column>
+                <af:column sortable="false" headerText="streetAddress" id="c2">
+                    <af:outputText value="#{row.streetAddress}" id="ot2"/>
+                </af:column>
+                <af:column sortable="false" headerText="postalCode" id="c3">
+                    <af:outputText value="#{row.postalCode}" id="ot3"/>
+                </af:column>
+                <af:column sortable="false" headerText="stateProvince" id="c4">
+                    <af:outputText value="#{row.stateProvince}" id="ot4"/>
+                </af:column>
+                <af:column sortable="false" headerText="countryId" id="c5">
+                    <af:outputText value="#{row.countryId}" id="ot5"/>
+                </af:column>
+            </af:table>
+        </af:form>
+    </af:document>
+</f:view>
